@@ -1,0 +1,16 @@
+tr, th {
+	background-color: aquamarine;
+	color: black;
+	text-align: left;
+}
+tr, td {
+	background-color: beige;
+	color: black;
+}
+td:hover {
+	background-color: gold;
+	color: black;
+}
+table {
+	border: 5px solid black;
+}
