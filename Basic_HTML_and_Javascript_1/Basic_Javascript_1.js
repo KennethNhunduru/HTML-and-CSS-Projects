@@ -1,0 +1,1 @@
+alert("All Web Developers must learn Javascript!")
