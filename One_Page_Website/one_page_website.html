@@ -4,7 +4,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>NEK Landscaping Designing</title>
-		<link rel="stylesheet" href="./css/one_page_website.css">
+		<link rel="stylesheet" href="./CSS/one_page_website.css">
+		<script src="./JS/one_page_website.js" defer></script>
 	</head>
 	   
 	<body>
@@ -22,57 +23,104 @@
 					</ul>
 				</nav>
 			</div>
-		<!--End of Nav Section--> 
+		<!--End of Nav Section-->
+		
+		<!--Home Section-->
 		<main>
-					<div>
-						<h1><strong>Imaginative Landscaping Ideas!</strong></h1>
-						<p>Your imagination sets the framework for your landscaping project, and we provide the ideas and detailing for your project!</p>
-						<p>Make your first step by getting in touch with NEK Landscape Designers and start living your dream!</p>
-					</div>
-				</div> 
+			<div>
+				<h1><strong>Imaginative Landscaping Ideas!</strong></h1>
+				<p>Your imagination sets the framework for your landscaping project, and we provide the ideas and detailing for your project!</p>
+				<p>Make your first step by getting in touch with NEK Landscape Designers and start living your dream!</p>
 			</div>
+		</main>			
 		<!--End of Home Section-->
 		
 		<!--Gallery Section-->
 			<section>
 				<div id="gallery">
 					<h1>Gallery</h1>
-					<p><strong>Here are some amazing lanscaping examples!</strong></p>
-					<!--Captioned pictures with figure, figcaption, and flexbox (HTML5 and CSS3)-->
-						<!-- All images go inside this div -->
-						<div class="flex_container">
-							<!-- Each image and caption in a figure.../figure block -->
-							<figure>
-								<img src="./Images/Thumb/thumbnail_1.png" alt="">
-								<figcaption>Frontyard</figcaption>
-							</figure>
-							<figure>
-								<img src="./Images/Thumb/thumbnail_2.png" alt="">
-								<figcaption>Backyard</figcaption>
-							</figure>
-							<figure>
-								<img src="./Images/Thumb/thumbnail_3.png" alt="">
-								<figcaption>Walkways and Paths</figcaption>
-							</figure>
-							<figure>
-								<img src="./Images/Thumb/thumbnail_4.png" alt="">
-								<figcaption>Ponds and Waterfalls</figcaption>
-							</figure>
-							<figure>
-								<img src="./Images/Thumb/thumbnail_5.png" alt="">
-								<figcaption>Driveways</figcaption>
-							</figure>
-							<figure>
-								<img src="./Images/Thumb/thumbnail_6.png" alt="">
-								<figcaption>Fireplaces</figcaption>
-							</figure>
+					<p><strong>Here are some amazing lanscaping examples!</strong></p>					
+
+					<!-- Here is the access point for the website user, a preview of the images to display. 
+					Will use the onclick="" event handler to execute the methods defined in the JavaScript -->
+
+					<div class="row">
+						<div class="col">
+						<img src=".\Images\Thumb\thumbnail_1.png" onclick="openLightbox();toSlide(1)" class="hover-shadow preview" alt="Front Yard."/>
 						</div>
+						<div class="col">
+						<img src=".\Images\Thumb\thumbnail_2.png" onclick="openLightbox();toSlide(2)" class="hover-shadow preview" alt="Back Yard."/>
+						</div>
+						<div class="col">
+						<img src=".\Images\Thumb\thumbnail_3.png" onclick="openLightbox();toSlide(3)" class="hover-shadow preview" alt="Walkways and Paths."/>
+						</div>
+						<div class="col">
+						<img src=".\Images\Thumb\thumbnail_4.png" onclick="openLightbox();toSlide(3)" class="hover-shadow preview" alt="Ponds and Waterfalls."/>
+						</div>
+						<div class="col">
+						<img src=".\Images\Thumb\thumbnail_5.png" onclick="openLightbox();toSlide(3)" class="hover-shadow preview" alt="Driveways."/>
+						</div>
+						<div class="col">
+						<img src=".\Images\Thumb\thumbnail_6.png" onclick="openLightbox();toSlide(3)" class="hover-shadow preview" alt="Fireplaces."/>
+						</div>
+					</div>
+					
+					<!-- This is the lightbox, it is contained in a modal. Here we provide all the images,
+					controls, and another set of preview images as the dots. Dots show the user which
+					image is currently active. -->
+						
+					<div id="Lightbox" class="modal">
+						<span class="close pointer" onclick="closeLightbox()">&times;</span>
+						<div class="modal-content">
+						<div class="slide">
+							<img src=".\Images\Thumb\thumbnail_1.png" class="image-slide" alt="Front Yard."/>
+						</div>
+						<div class="slide">
+							<img src=".\Images\Thumb\thumbnail_2.png" class="image-slide" alt="Back Yard."/>
+						</div>    
+						<div class="slide">
+							<img src=".\Images\Thumb\thumbnail_3.png" class="image-slide" alt="Walkways and Paths"/>
+						</div>
+						<div class="slide">
+							<img src=".\Images\Thumb\thumbnail_4.png" class="image-slide" alt="Ponds and Waterfalls"/>
+						</div>
+						<div class="slide">
+							<img src=".\Images\Thumb\thumbnail_5.png" class="image-slide" alt="Driveways"/>
+						</div>
+						<div class="slide">
+							<img src=".\Images\Thumb\thumbnail_6.png" class="image-slide" alt="Fireplaces"/>
+						</div>
+						
+						<a class="previous" onclick="changeSlide(-1)">&#10094;</a>
+						<a class="next" onclick="changeSlide(1)">&#10095;</a>
+						
+						<div class="dots">
+							<div class="col">
+							<img src=".\Images\Thumb\thumbnail_1.png" class="modal-preview hover-shadow" onclick="toSlide(1)" alt="Front Yard."/>
+							</div>
+							<div class="col">
+							<img src=".\Images\Thumb\thumbnail_2.png" class="modal-preview hover-shadow" onclick="toSlide(2)" alt="Back Yard."/>
+							</div>
+							<div class="col">
+							<img src=".\Images\Thumb\thumbnail_3.png" class="modal-preview hover-shadow" onclick="toSlide(3)" alt="Walkways and Paths."/>
+							</div>
+							<div class="col">
+							<img src=".\Images\Thumb\thumbnail_4.png" class="modal-preview hover-shadow" onclick="toSlide(3)" alt="Ponds and Waterfalls."/>
+							</div>
+							<div class="col">
+							<img src=".\Images\Thumb\thumbnail_5.png" class="modal-preview hover-shadow" onclick="toSlide(3)" alt="Driveways."/>
+							</div>
+							<div class="col">
+							<img src=".\Images\Thumb\thumbnail_6.png" class="modal-preview hover-shadow" onclick="toSlide(3)" alt="Fireplaces."/>
+							</div>
+						</div>
+					</div>				
 				</div>
 			</section><br><br>
 		<!--End of Gallery Section-->
 		
 		<!--Video Section-->
-			<iframe src="https://www.youtube.com/embed/EF9Pa_gbPU4?si=CEN-mz99LPkGIsyi" style="width:560px height:315px"   title="YouTube video player" 
+			<iframe src="https://www.youtube.com/embed/EF9Pa_gbPU4?si=CEN-mz99LPkGIsyi" style="width:560px; height:315px"   title="YouTube video player" 
 				frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> &nbsp; &nbsp; &nbsp;
 			
 			<video width="320" height="240" controls>
