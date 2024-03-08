@@ -16,8 +16,15 @@
     <div class="container">
 
         <!--Nav Section-->
+        <!--Fixed the Navbar at the top so it is always visible when scrolling.
+        Changed the Navbar background color to blue(primary).
+        Added the Academy Cinemas Brand logo.-->
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <nav class="navbar fixed-top nav-tabs navbar-expand-lg navbar-light bg-primary">
+            
+            <a class="navbar-brand" href="#">
+                <img src="./Img/Academy_Cinemas_1.png" alt="Logo" width="30" height="24">
+            </a>            
 
             <div class="collapse navbar-collapse" id="navbartogglerDemo01">
 
@@ -39,6 +46,12 @@
                 </form>
             </div>
         </nav>
+                 
+          <nav >
+            <!-- Navbar content -->
+          </nav>
+          
+          
 
         <!--End of Nav Section-->
 
@@ -80,7 +93,6 @@
                 <div class="col-sm">
                     
                     <h3>Now Playing:</h3>
-
                     <ul class="list group">
 
                         <li class="list group item">
@@ -181,25 +193,92 @@
                 
         <!--End of Showtimes Section-->
 
+        <!-- jumbotron heading -->
+        <div class="jumbotron jumbotron-fluid bg-info mt-5 text-center">
+            <div class="container">
+                <h1 class="display-4 hidden-sm-down" style="color: #fff;font-family: roboto; font-weight: 900; text-transform: uppercase; ">
+                Movie Deals</h1>
+                <p class="lead">Check out our monthly deals ...</p>
+                <!-- movie deals -->
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#register">See our monthly movie deals</button>
+                <!-- /movie deals -->
+            </div>
+        </div>
+        <!-- /jumbotron heading -->
+
         <!--Deals Section-->
 
-        <div class="text-center" id="deals">
-
-            <form>
-
-                <div class="form-group">
-
-                    <h3 class="text-primary my-5">Sign up for Movie Club Rewards!</h3>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-
+        <div class="row">
+            <div class="container text-center col-md-6" id="deals">
+                <div class="container text-center">
+                    <h3 class="display-5 my-4 col-lg-auto text-primary">Stay current on movies!</h3>
+                    <div class="input-group mb-5 input-group-sm">
+                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Email">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-secondary btn-info popover-dismiss" data-container="body" data-toggle="popover" 
+                            data-placement="top" data-content="Submit your email to receive great movie reward deals!">
+                                Sign up
+                              </button>
+                        </span>
+                    </div>
                 </div>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-
-            </form>
+            </div>
         </div>
 
         <!--End of Deals Section-->
+
+        <!--Form Modal-->  
+        
+        <div class="modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">                    
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Register to receive movie deals</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form>
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="lastname">Last Name</label>
+                                    <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                                </div>
+                            </fieldset>
+                                
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password">
+                                </div>                          
+                            </fieldset>
+                        </form>                    
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of Form Modal-->
 
         <!--Footer Section-->
 
@@ -229,8 +308,18 @@
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+          $('[data-toggle="popover"]').popover();   
+        });
+    </script>
+    <script>
+        $('.popover-dismiss').popover({
+        trigger: 'focus'
+        })
+    </script>
   </body>
 </html>
